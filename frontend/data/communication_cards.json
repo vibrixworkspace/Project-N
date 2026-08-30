@@ -1,0 +1,59 @@
+{
+  "feelings": [
+    { "id": "f1", "emoji": "😊", "label": "Happy", "speech": "I am feeling happy." },
+    { "id": "f2", "emoji": "🙂", "label": "Good", "speech": "I am feeling good." },
+    { "id": "f3", "emoji": "😐", "label": "Okay", "speech": "I am feeling okay." },
+    { "id": "f4", "emoji": "😟", "label": "Worried", "speech": "I am feeling worried." },
+    { "id": "f5", "emoji": "😢", "label": "Sad", "speech": "I am feeling sad." },
+    { "id": "f6", "emoji": "😡", "label": "Angry", "speech": "I am feeling angry." },
+    { "id": "f7", "emoji": "😴", "label": "Tired", "speech": "I am feeling tired." },
+    { "id": "f8", "emoji": "🤕", "label": "Uncomfortable", "speech": "I feel uncomfortable." },
+    { "id": "f9", "emoji": "😰", "label": "Scared", "speech": "I am feeling scared." },
+    { "id": "f10", "emoji": "🤩", "label": "Excited", "speech": "I am feeling excited!" }
+  ],
+  "needs": [
+    { "id": "n1", "emoji": "💧", "label": "Water", "speech": "I would like some water please." },
+    { "id": "n2", "emoji": "🍎", "label": "Food", "speech": "I am hungry. I would like food please." },
+    { "id": "n3", "emoji": "🚻", "label": "Bathroom", "speech": "I need to use the bathroom." },
+    { "id": "n4", "emoji": "🛌", "label": "Rest", "speech": "I need to rest." },
+    { "id": "n5", "emoji": "👩‍🏫", "label": "Help", "speech": "I need help please." },
+    { "id": "n6", "emoji": "🏠", "label": "Home", "speech": "I want to go home." },
+    { "id": "n7", "emoji": "🤫", "label": "Quiet", "speech": "It is too loud. I need quiet." },
+    { "id": "n8", "emoji": "🤗", "label": "Hug", "speech": "I would like a hug." },
+    { "id": "n9", "emoji": "🚪", "label": "Leave", "speech": "I would like to leave this room." },
+    { "id": "n10", "emoji": "🎮", "label": "Play", "speech": "I want to play." }
+  ],
+  "people": [
+    { "id": "p1", "emoji": "👩", "label": "Mum", "speech": "I want my mum." },
+    { "id": "p2", "emoji": "👨", "label": "Dad", "speech": "I want my dad." },
+    { "id": "p3", "emoji": "👩‍🏫", "label": "Teacher", "speech": "I need my teacher." },
+    { "id": "p4", "emoji": "👨‍⚕️", "label": "Doctor", "speech": "I need the doctor." },
+    { "id": "p5", "emoji": "👫", "label": "Friend", "speech": "I want to be with my friend." },
+    { "id": "p6", "emoji": "🤝", "label": "Helper", "speech": "I need a helper please." }
+  ],
+  "activities": [
+    { "id": "a1", "emoji": "🎨", "label": "Drawing", "speech": "I want to draw." },
+    { "id": "a2", "emoji": "🎵", "label": "Music", "speech": "I want to listen to music." },
+    { "id": "a3", "emoji": "⚽", "label": "Play Outside", "speech": "I want to play outside." },
+    { "id": "a4", "emoji": "📚", "label": "Reading", "speech": "I want to read." },
+    { "id": "a5", "emoji": "🧩", "label": "Puzzle", "speech": "I want to do a puzzle." },
+    { "id": "a6", "emoji": "📺", "label": "Screen Time", "speech": "I want to watch something." },
+    { "id": "a7", "emoji": "🍽️", "label": "Eating", "speech": "I want to eat." },
+    { "id": "a8", "emoji": "😴", "label": "Sleep", "speech": "I want to sleep." }
+  ],
+  "places": [
+    { "id": "pl1", "emoji": "🏫", "label": "School", "speech": "I want to go to school." },
+    { "id": "pl2", "emoji": "🏠", "label": "Home", "speech": "I want to go home." },
+    { "id": "pl3", "emoji": "🌳", "label": "Park", "speech": "I want to go to the park." },
+    { "id": "pl4", "emoji": "🛒", "label": "Shop", "speech": "I want to go to the shop." },
+    { "id": "pl5", "emoji": "🚌", "label": "Bus", "speech": "I want to take the bus." }
+  ],
+  "pain": [
+    { "id": "pa1", "emoji": "🤕", "label": "Head Hurts", "speech": "My head is hurting." },
+    { "id": "pa2", "emoji": "🦷", "label": "Tooth Hurts", "speech": "My tooth is hurting." },
+    { "id": "pa3", "emoji": "🤢", "label": "Tummy Hurts", "speech": "My tummy is hurting." },
+    { "id": "pa4", "emoji": "🦵", "label": "Leg Hurts", "speech": "My leg is hurting." },
+    { "id": "pa5", "emoji": "💪", "label": "Arm Hurts", "speech": "My arm is hurting." },
+    { "id": "pa6", "emoji": "👁️", "label": "Eye Hurts", "speech": "My eye is hurting." }
+  ]
+}

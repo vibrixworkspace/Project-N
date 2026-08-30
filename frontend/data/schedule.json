@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sched_001",
+    "childId": "child_001",
+    "title": "Aarav's Daily Schedule",
+    "items": [
+      { "time": "07:00", "icon": "🌅", "label": "Wake Up", "description": "Morning routine begins" },
+      { "time": "07:30", "icon": "🍳", "label": "Breakfast", "description": "Favourite cereal with milk" },
+      { "time": "08:30", "icon": "🚌", "label": "School Bus", "description": "Bus arrives at 8:30am" },
+      { "time": "09:00", "icon": "🏫", "label": "School Begins", "description": "Morning assembly" },
+      { "time": "09:30", "icon": "📚", "label": "Learning Time", "description": "Classroom activities" },
+      { "time": "10:30", "icon": "🍎", "label": "Morning Break", "description": "Snack and free play" },
+      { "time": "11:00", "icon": "🎨", "label": "Art & Creativity", "description": "Drawing and craft activities" },
+      { "time": "12:30", "icon": "🍽️", "label": "Lunch", "description": "Lunch in the dining hall" },
+      { "time": "13:30", "icon": "⚽", "label": "Outdoor Play", "description": "Playground time" },
+      { "time": "14:30", "icon": "📖", "label": "Reading Time", "description": "Quiet reading or visual activities" },
+      { "time": "15:30", "icon": "🚌", "label": "School Bus Home", "description": "Bus departure" },
+      { "time": "16:00", "icon": "🏠", "label": "Home", "description": "Afternoon relax time" },
+      { "time": "17:00", "icon": "🎮", "label": "Free Time", "description": "Favourite activities at home" },
+      { "time": "19:00", "icon": "🍴", "label": "Dinner", "description": "Family dinner time" },
+      { "time": "20:00", "icon": "🛁", "label": "Bath Time", "description": "Evening routine" },
+      { "time": "20:30", "icon": "📖", "label": "Story Time", "description": "Bedtime story" },
+      { "time": "21:00", "icon": "🌙", "label": "Bedtime", "description": "Lights off, goodnight" }
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "childId": "child_001",
+    "date": "2026-08-30",
+    "mood": "Happy",
+    "moodEmoji": "😊",
+    "communication": ["Used picture communication", "Used gestures"],
+    "behavior": ["Participated in activity", "Engaged positively"],
+    "context": "Classroom",
+    "participationLevel": "High",
+    "notes": "Had a great morning in art class. Responded well to visual schedule.",
+    "recordedBy": "Ms. Kavitha Reddy",
+    "timestamp": "2026-08-30T09:30:00Z"
+  },
+  {
+    "childId": "child_001",
+    "date": "2026-08-29",
+    "mood": "Anxious",
+    "moodEmoji": "😟",
+    "communication": ["Used gestures"],
+    "behavior": ["Needed additional support", "Became frustrated"],
+    "context": "Classroom",
+    "participationLevel": "Low",
+    "notes": "Fire drill disrupted routine. Took 20 min to settle. Extra transition time helped.",
+    "recordedBy": "Ms. Kavitha Reddy",
+    "timestamp": "2026-08-29T10:15:00Z"
+  },
+  {
+    "childId": "child_001",
+    "date": "2026-08-28",
+    "mood": "Calm",
+    "moodEmoji": "🙂",
+    "communication": ["Spoke verbally", "Used gestures"],
+    "behavior": ["Participated in activity", "Engaged positively"],
+    "context": "Classroom",
+    "participationLevel": "High",
+    "notes": "Great participation in music therapy. Hummed along to songs.",
+    "recordedBy": "Ms. Kavitha Reddy",
+    "timestamp": "2026-08-28T11:00:00Z"
+  },
+  {
+    "childId": "child_001",
+    "date": "2026-08-27",
+    "mood": "Frustrated",
+    "moodEmoji": "😡",
+    "communication": ["Had difficulty expressing needs"],
+    "behavior": ["Became frustrated", "Avoided activity"],
+    "context": "Classroom",
+    "participationLevel": "Low",
+    "notes": "Transition from play to classroom was difficult. Used ear-covering signal.",
+    "recordedBy": "Ms. Kavitha Reddy",
+    "timestamp": "2026-08-27T14:00:00Z"
+  },
+  {
+    "childId": "child_001",
+    "date": "2026-08-26",
+    "mood": "Happy",
+    "moodEmoji": "😊",
+    "communication": ["Used picture communication"],
+    "behavior": ["Participated in activity"],
+    "context": "Playground",
+    "participationLevel": "High",
+    "notes": "Enjoyed outdoor time. Used picture cards to request swing.",
+    "recordedBy": "Ms. Kavitha Reddy",
+    "timestamp": "2026-08-26T15:00:00Z"
+  },
+  {
+    "childId": "child_002",
+    "date": "2026-08-30",
+    "mood": "Calm",
+    "moodEmoji": "🙂",
+    "communication": ["Spoke verbally"],
+    "behavior": ["Participated in activity"],
+    "context": "Classroom",
+    "participationLevel": "High",
+    "notes": "Good day. Actively participated in group activity.",
+    "recordedBy": "Ms. Lakshmi Patel",
+    "timestamp": "2026-08-30T09:00:00Z"
+  }
+]

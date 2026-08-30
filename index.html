@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuroVoice — Accessible Child Development & Communication Platform</title>
+  <meta name="description" content="NeuroVoice helps parents, teachers, and caregivers understand, record, and respond to the communication, behavior, emotions, and learning patterns of children with intellectual and developmental disabilities." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- App Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="topnav">
+    <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle Menu">☰</button>
+    <a href="#home" class="topnav-brand" data-view-target="home">
+      <span>NeuroVoice</span>
+      <span class="brand-dot"></span>
+    </a>
+    <span class="proto-badge">Frontend Prototype</span>
+
+    <div class="topnav-spacer"></div>
+
+    <!-- Active Child Selector Dropdown -->
+    <div style="display:flex; align-items:center; gap:8px;">
+      <span style="font-size:0.8rem; font-weight:600; color:var(--text-muted);">Active Child:</span>
+      <select class="child-select-dropdown form-select" style="padding:6px 12px; font-size:0.85rem; width:auto; border-radius:99px;"></select>
+    </div>
+
+    <!-- Quick Switcher Buttons -->
+    <button class="btn btn-secondary btn-sm" data-view-target="accessibility">♿ Accessibility</button>
+    <button class="btn btn-primary btn-sm" data-view-target="child-mode">👶 Child Mode</button>
+  </header>
+
+  <div class="app-wrapper">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span>NeuroVoice</span>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Main Platform</div>
+        <button class="nav-item active" data-view-target="home">
+          <span class="nav-icon">🏠</span> Home
+        </button>
+        <button class="nav-item" data-view-target="child-mode">
+          <span class="nav-icon">👶</span> Child Mode
+        </button>
+        <button class="nav-item" data-view-target="comm-board">
+          <span class="nav-icon">💬</span> Help Me Communicate
+        </button>
+        <button class="nav-item" data-view-target="dashboard">
+          <span class="nav-icon">📊</span> Educator Dashboard
+        </button>
+        <button class="nav-item" data-view-target="parent-dashboard">
+          <span class="nav-icon">👨‍👩‍👧</span> Parent View
+        </button>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Observation & Logging</div>
+        <button class="nav-item" data-view-target="profiles">
+          <span class="nav-icon">🧒</span> Child Profiles
+        </button>
+        <button class="nav-item" data-view-target="observations">
+          <span class="nav-icon">📋</span> Daily Observation
+        </button>
+        <button class="nav-item" data-view-target="journal">
+          <span class="nav-icon">🎨</span> Emotion Journal ("My Day")
+        </button>
+        <button class="nav-item" data-view-target="behavior-log">
+          <span class="nav-icon">📓</span> Behavior Log (ABC)
+        </button>
+        <button class="nav-item" data-view-target="insights">
+          <span class="nav-icon">📈</span> Pattern Insights
+        </button>
+        <button class="nav-item" data-view-target="schedule">
+          <span class="nav-icon">📅</span> Visual Schedule
+        </button>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Support & Assistant</div>
+        <button class="nav-item" data-view-target="assistant">
+          <span class="nav-icon">🤖</span> AI Assistant
+        </button>
+        <button class="nav-item" data-view-target="circle-of-care">
+          <span class="nav-icon">🤝</span> Circle of Care
+        </button>
+        <button class="nav-item" data-view-target="learning">
+          <span class="nav-icon">🧩</span> Learning Support
+        </button>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Competition & Design</div>
+        <button class="nav-item" data-view-target="user-research">
+          <span class="nav-icon">🔍</span> User Research & Persona
+        </button>
+        <button class="nav-item" data-view-target="design-principles">
+          <span class="nav-icon">🎨</span> Design Principles
+        </button>
+        <button class="nav-item" data-view-target="responsible-ai">
+          <span class="nav-icon">🛡️</span> Responsible AI & Privacy
+        </button>
+        <button class="nav-item" data-view-target="accessibility">
+          <span class="nav-icon">♿</span> Accessibility Audit
+        </button>
+      </div>
+
+      <div class="sidebar-footer">
+        <div style="font-size:0.75rem; color:var(--text-muted); text-align:center;">
+          NeuroVoice Static Prototype<br/>Designed for Children with IDD
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Views -->
+    <main class="main-content">
+
+      <!-- ==================== VIEW: HOME ==================== -->
+      <section id="view-home" class="view active fade-in">
+        <div class="hero">
+          <span class="hero-badge">Child Development & Communication Platform</span>
+          <h1>Every child communicates <span>differently.</span></h1>
+          <p>NeuroVoice helps parents, teachers, and special educators understand, record, and respond to the communication, emotions, and learning patterns of children with intellectual and developmental disabilities.</p>
+          
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" onclick="openModal('addChildModal')">➕ Start a Child Profile</button>
+            <button class="btn btn-secondary btn-lg" data-view-target="comm-board">💬 Try Communication Board</button>
+            <button class="btn btn-secondary btn-lg" data-view-target="child-mode">👶 Enter Child Mode</button>
+          </div>
+
+          <div class="hero-flow">
+            <div class="hero-flow-node">
+              <span class="node-emoji">🧒</span>
+              <span>Child Expresses</span>
+            </div>
+            <span class="hero-flow-arrow">➔</span>
+            <div class="hero-flow-node" style="border-color:var(--primary);">
+              <span class="node-emoji">💡</span>
+              <span>NeuroVoice Platform</span>
+            </div>
+            <span class="hero-flow-arrow">➔</span>
+            <div class="hero-flow-node">
+              <span class="node-emoji">👩‍🏫</span>
+              <span>Parent / Teacher Support</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem / Solution Story Section -->
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">How <span>NeuroVoice</span> Empowers Communication</h2>
+            <p class="section-subtitle">A simple 4-step framework to bridge understanding between home, school, and therapy environments.</p>
+          </div>
+        </div>
+
+        <div class="story-flow">
+          <div class="story-step">
+            <div class="story-step-num">1</div>
+            <div class="story-step-icon">👁️</div>
+            <h3>Observe</h3>
+            <p>Easily record observed moods, behaviors, and triggers using large visual controls.</p>
+          </div>
+          <div class="story-step">
+            <div class="story-step-num">2</div>
+            <div class="story-step-icon">📋</div>
+            <h3>Record</h3>
+            <p>Store daily logs and emotional responses locally in structured profiles.</p>
+          </div>
+          <div class="story-step">
+            <div class="story-step-num">3</div>
+            <div class="story-step-icon">💡</div>
+            <h3>Understand</h3>
+            <p>View pattern summaries to recognize recurring behaviors during transitions or sensory changes.</p>
+          </div>
+          <div class="story-step">
+            <div class="story-step-num">4</div>
+            <div class="story-step-icon">🤝</div>
+            <h3>Support</h3>
+            <p>Provide tailored, consistent care across parents, special educators, and caregivers.</p>
+          </div>
+        </div>
+
+        <!-- Key Features Quick Grid -->
+        <div style="margin-top:40px;">
+          <h3 class="section-title" style="font-size:1.3rem; margin-bottom:16px;">Core Platform Modules</h3>
+          <div class="card-grid card-grid-3">
+            <div class="card" data-view-target="comm-board" style="cursor:pointer;">
+              <span style="font-size:2rem;">💬</span>
+              <h3 style="font-size:1.1rem; margin-top:8px;">Communication Board</h3>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Visual card system with Text-to-Speech to help non-verbal children voice needs.</p>
+            </div>
+            <div class="card" data-view-target="child-mode" style="cursor:pointer;">
+              <span style="font-size:2rem;">👶</span>
+              <h3 style="font-size:1.1rem; margin-top:8px;">Child Mode</h3>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Ultra-simplified interface with oversized buttons and minimal cognitive load.</p>
+            </div>
+            <div class="card" data-view-target="insights" style="cursor:pointer;">
+              <span style="font-size:2rem;">📈</span>
+              <h3 style="font-size:1.1rem; margin-top:8px;">Pattern Insights</h3>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Rule-based summaries highlighting recurring triggers and engagement trends.</p>
+            </div>
+            <div class="card" data-view-target="schedule" style="cursor:pointer;">
+              <span style="font-size:2rem;">📅</span>
+              <h3 style="font-size:1.1rem; margin-top:8px;">Visual Schedule</h3>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Step-by-step daily routines to reduce uncertainty and ease transitions.</p>
+            </div>
+            <div class="card" data-view-target="assistant" style="cursor:pointer;">
+              <span style="font-size:2rem;">🤖</span>
+              <h3 style="font-size:1.1rem; margin-top:8px;">AI Assistant</h3>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Simulated rule-based assistant to answer caregiver queries on logged data.</p>
+            </div>
+            <div class="card" data-view-target="accessibility" style="cursor:pointer;">
+              <span style="font-size:2rem;">♿</span>
+              <h3 style="font-size:1.1rem; margin-top:8px;">Accessibility Center</h3>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Customizable text size, high contrast, reduced motion, and simple mode.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Challenge -->
+        <div class="section-header" style="margin-top:48px;">
+          <div>
+            <h2 class="section-title">The <span>Challenge</span></h2>
+            <p class="section-subtitle">Every child communicates differently. For children with intellectual and developmental disabilities, expressing emotions, needs, discomfort, or frustration can sometimes be difficult — and important observations can become scattered between home, school, and other support environments.</p>
+          </div>
+        </div>
+
+        <!-- Give every child a simpler way to communicate -->
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Give every child a <span>simpler way to communicate.</span></h2>
+            <p class="section-subtitle">Child Mode and the Communication Board use large visual cards paired with text and Text-to-Speech, so children can express how they feel and what they need.</p>
+          </div>
+        </div>
+        <div class="child-mode-section" style="margin-bottom:12px;">
+          <h3 style="font-size:1rem; margin-bottom:10px;">How are you feeling?</h3>
+          <div class="child-big-grid">
+            <button class="child-big-btn child-emotion-btn" data-speech="I am feeling happy!" data-emoji="😊"><span class="cbem">😊</span> Happy</button>
+            <button class="child-big-btn child-emotion-btn" data-speech="I am feeling okay." data-emoji="😐"><span class="cbem">😐</span> Okay</button>
+            <button class="child-big-btn child-emotion-btn" data-speech="I am feeling worried." data-emoji="😟"><span class="cbem">😟</span> Worried</button>
+            <button class="child-big-btn child-emotion-btn" data-speech="I am feeling angry." data-emoji="😡"><span class="cbem">😡</span> Angry</button>
+            <button class="child-big-btn child-emotion-btn" data-speech="I am tired." data-emoji="😴"><span class="cbem">😴</span> Tired</button>
+          </div>
+        </div>
+        <div class="child-mode-section">
+          <h3 style="font-size:1rem; margin-bottom:10px;">What do you need?</h3>
+          <div class="child-big-grid">
+            <button class="child-big-btn child-need-btn" data-speech="I would like water please." data-emoji="💧"><span class="cbem">💧</span> Water</button>
+            <button class="child-big-btn child-need-btn" data-speech="I am hungry and need food." data-emoji="🍎"><span class="cbem">🍎</span> Food</button>
+            <button class="child-big-btn child-need-btn" data-speech="I need to use the bathroom." data-emoji="🚻"><span class="cbem">🚻</span> Bathroom</button>
+            <button class="child-big-btn child-need-btn" data-speech="I need help." data-emoji="👩‍🏫"><span class="cbem">👩‍🏫</span> Help</button>
+            <button class="child-big-btn child-need-btn" data-speech="I want to go home." data-emoji="🏠"><span class="cbem">🏠</span> Home</button>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:8px;">
+          <button class="btn btn-primary" data-view-target="comm-board">💬 Open the Full Communication Board</button>
+        </div>
+
+        <!-- Built Around the Child -->
+        <div class="section-header" style="margin-top:48px;">
+          <div>
+            <h2 class="section-title">Built Around the <span>Child</span>, Not the Technology</h2>
+            <p class="section-subtitle">Every screen uses large touch targets, predictable navigation, minimal choices, and readable typography to reduce cognitive load.</p>
+          </div>
+        </div>
+        <div class="card-grid card-grid-3">
+          <div class="card">
+            <span style="font-size:1.8rem;">👆</span>
+            <h3 style="font-size:1rem; margin-top:8px;">Large, Simple Interactions</h3>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Oversized buttons and minimal steps make choices easy to make.</p>
+          </div>
+          <div class="card">
+            <span style="font-size:1.8rem;">🔄</span>
+            <h3 style="font-size:1rem; margin-top:8px;">Predictable & Consistent</h3>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Consistent layouts and navigation reduce uncertainty for the child.</p>
+          </div>
+          <div class="card">
+            <span style="font-size:1.8rem;">♿</span>
+            <h3 style="font-size:1rem; margin-top:8px;">Accessible by Default</h3>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Adjustable text size, high contrast, reduced motion, and optional audio.</p>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:16px;">
+          <button class="btn btn-secondary btn-sm" data-view-target="design-principles">🎨 See All Design Principles</button>
+        </div>
+
+        <!-- Connect the Circle of Care -->
+        <div class="section-header" style="margin-top:48px;">
+          <div>
+            <h2 class="section-title">Connect the <span>Circle of Care</span></h2>
+            <p class="section-subtitle">A child's communication and behavior can vary across environments. NeuroVoice provides a shared prototype for organizing observations and supporting more consistent communication between caregivers and educators.</p>
+          </div>
+        </div>
+        <div class="hero-flow">
+          <div class="hero-flow-node">
+            <span class="node-emoji">🧒</span>
+            <span>Child</span>
+          </div>
+          <span class="hero-flow-arrow">➔</span>
+          <div class="hero-flow-node" style="border-color:var(--primary);">
+            <span class="node-emoji">👨‍👩‍👧</span>
+            <span>Parent</span>
+          </div>
+          <span class="hero-flow-arrow">➔</span>
+          <div class="hero-flow-node">
+            <span class="node-emoji">👩‍🏫</span>
+            <span>Teacher</span>
+          </div>
+          <span class="hero-flow-arrow">➔</span>
+          <div class="hero-flow-node">
+            <span class="node-emoji">🧑‍⚕️</span>
+            <span>Special Educator</span>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:16px;">
+          <button class="btn btn-secondary btn-sm" data-view-target="circle-of-care">🤝 Explore Circle of Care</button>
+        </div>
+
+        <!-- Persona Teaser -->
+        <div class="section-header" style="margin-top:48px;">
+          <div>
+            <h2 class="section-title">Designed Around a <span>Real Persona</span></h2>
+            <p class="section-subtitle">Fictional persona created for product design, not real user research.</p>
+          </div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-avatar-wrap">
+            <div class="persona-avatar">🧒</div>
+            <div class="persona-avatar-name">Aarav (Age 9)</div>
+          </div>
+          <div>
+            <h3 style="font-size:1.2rem; margin-bottom:4px;">Meet Aarav</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;">Student • Fictional persona created for product design.</p>
+            <p style="font-size:0.9rem; color:var(--text-secondary);">Aarav wants to express his needs, communicate his emotions, understand his daily routine, and participate in activities — supported by simple visual communication and predictable, supportive adults.</p>
+            <button class="btn btn-secondary btn-sm" data-view-target="user-research" style="margin-top:14px;">🔍 Read Full Persona & Research</button>
+          </div>
+        </div>
+
+        <!-- Accessibility -->
+        <div class="section-header" style="margin-top:48px;">
+          <div>
+            <h2 class="section-title">Accessibility Is <span>Not an Add-On</span></h2>
+            <p class="section-subtitle">Large readable text, high contrast, reduced motion, keyboard navigation, large touch targets, and optional audio are built into every view.</p>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:4px;">
+          <button class="btn btn-primary btn-sm" data-view-target="accessibility">♿ Explore Accessibility</button>
+        </div>
+
+        <!-- Responsible AI & Privacy -->
+        <div class="section-header" style="margin-top:48px;">
+          <div>
+            <h2 class="section-title">Responsible <span>AI & Privacy</span></h2>
+            <p class="section-subtitle">NeuroVoice uses AI-assisted concepts to help organize observations and provide supportive summaries. It is a communication and observation aid, not a diagnostic system — insights should always be reviewed by parents, educators, or qualified professionals. This is a frontend prototype; demonstration data is stored locally in your browser, not on external servers.</p>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:4px;">
+          <button class="btn btn-secondary btn-sm" data-view-target="responsible-ai">🛡️ Read Our Responsible AI & Privacy Approach</button>
+        </div>
+
+        <!-- Why NeuroVoice -->
+        <div class="section-header" style="margin-top:48px;">
+          <div>
+            <h2 class="section-title">Why <span>NeuroVoice?</span></h2>
+            <p class="section-subtitle">Designed for an accessibility-focused problem-solving competition.</p>
+          </div>
+        </div>
+        <div class="story-flow">
+          <div class="story-step">
+            <div class="story-step-num">1</div>
+            <div class="story-step-icon">🧒</div>
+            <h3>Overlooked User</h3>
+            <p>Children with intellectual and developmental disabilities.</p>
+          </div>
+          <div class="story-step">
+            <div class="story-step-num">2</div>
+            <div class="story-step-icon">🎯</div>
+            <h3>Specific Need</h3>
+            <p>Accessible communication and better understanding of individual patterns.</p>
+          </div>
+          <div class="story-step">
+            <div class="story-step-num">3</div>
+            <div class="story-step-icon">💡</div>
+            <h3>Design Response</h3>
+            <p>Simple visual communication, observation, and routine support.</p>
+          </div>
+          <div class="story-step">
+            <div class="story-step-num">4</div>
+            <div class="story-step-icon">🤝</div>
+            <h3>Potential Impact</h3>
+            <p>More consistent support from parents, teachers, and caregivers.</p>
+          </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="hero" style="margin-top:48px; text-align:center;">
+          <h2 style="font-size:1.8rem; font-weight:800;">Every child deserves to be understood.</h2>
+          <p style="max-width:600px; margin:12px auto 0;">Explore NeuroVoice and see how accessible technology can support communication, observation, and understanding.</p>
+          <div class="hero-actions" style="justify-content:center; margin-top:20px;">
+            <button class="btn btn-primary btn-lg" data-view-target="child-mode">👶 Enter Child Mode</button>
+            <button class="btn btn-secondary btn-lg" data-view-target="comm-board">💬 Explore NeuroVoice</button>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer style="margin-top:56px; padding-top:24px; border-top:1px solid var(--border, rgba(0,0,0,0.08)); text-align:center;">
+          <div style="font-weight:700; font-size:1.05rem;">NeuroVoice</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin:6px 0 16px;">Understanding every child's way of communicating.</p>
+          <nav aria-label="Footer navigation" style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-bottom:16px;">
+            <button class="btn btn-secondary btn-sm" data-view-target="comm-board">Communication</button>
+            <button class="btn btn-secondary btn-sm" data-view-target="child-mode">Child Mode</button>
+            <button class="btn btn-secondary btn-sm" data-view-target="dashboard">Dashboard</button>
+            <button class="btn btn-secondary btn-sm" data-view-target="insights">Insights</button>
+            <button class="btn btn-secondary btn-sm" data-view-target="accessibility">Accessibility</button>
+            <button class="btn btn-secondary btn-sm" data-view-target="user-research">About</button>
+          </nav>
+          <p style="font-size:0.75rem; color:var(--text-muted);">Prototype developed for an accessibility-focused problem-solving competition.</p>
+        </footer>
+      </section>
+
+      <!-- ==================== VIEW: CHILD MODE ==================== -->
+      <section id="view-child-mode" class="view fade-in">
+        <div class="child-mode-wrapper">
+          <div class="child-mode-header">
+            <span class="child-mode-title">👶 Child Mode</span>
+            <button class="btn btn-secondary btn-sm" data-view-target="home">Exit Child Mode</button>
+          </div>
+
+          <div class="child-mode-section">
+            <h2>How are you feeling?</h2>
+            <div class="child-big-grid">
+              <button class="child-big-btn child-emotion-btn" data-speech="I am feeling happy!" data-emoji="😊">
+                <span class="cbem">😊</span> Happy
+              </button>
+              <button class="child-big-btn child-emotion-btn" data-speech="I am feeling calm." data-emoji="🙂">
+                <span class="cbem">🙂</span> Calm
+              </button>
+              <button class="child-big-btn child-emotion-btn" data-speech="I am feeling sad." data-emoji="😢">
+                <span class="cbem">😢</span> Sad
+              </button>
+              <button class="child-big-btn child-emotion-btn" data-speech="I am feeling worried." data-emoji="😟">
+                <span class="cbem">😟</span> Worried
+              </button>
+              <button class="child-big-btn child-emotion-btn" data-speech="I am feeling angry." data-emoji="😡">
+                <span class="cbem">😡</span> Angry
+              </button>
+              <button class="child-big-btn child-emotion-btn" data-speech="I am tired." data-emoji="😴">
+                <span class="cbem">😴</span> Tired
+              </button>
+            </div>
+          </div>
+
+          <div class="child-mode-section">
+            <h2>What do you need right now?</h2>
+            <div class="child-big-grid">
+              <button class="child-big-btn child-need-btn" data-speech="I would like water please." data-emoji="💧">
+                <span class="cbem">💧</span> Water
+              </button>
+              <button class="child-big-btn child-need-btn" data-speech="I am hungry and need food." data-emoji="🍎">
+                <span class="cbem">🍎</span> Food
+              </button>
+              <button class="child-big-btn child-need-btn" data-speech="I need to use the bathroom." data-emoji="🚻">
+                <span class="cbem">🚻</span> Bathroom
+              </button>
+              <button class="child-big-btn child-need-btn" data-speech="I need help." data-emoji="👩‍🏫">
+                <span class="cbem">👩‍🏫</span> Help
+              </button>
+              <button class="child-big-btn child-need-btn" data-speech="I need quiet time." data-emoji="🤫">
+                <span class="cbem">🤫</span> Quiet
+              </button>
+              <button class="child-big-btn child-need-btn" data-speech="I want to rest." data-emoji="🛌">
+                <span class="cbem">🛌</span> Rest
+              </button>
+            </div>
+          </div>
+
+          <div id="childModeOutput" class="child-output-box"></div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: COMMUNICATION BOARD ==================== -->
+      <section id="view-comm-board" class="view fade-in">
+        <h1 class="page-title">Help Me Communicate</h1>
+        <p class="page-subtitle">Select visual cards to communicate feelings, needs, people, or activities.</p>
+
+        <div class="filter-row">
+          <button class="filter-btn active" data-comm-cat="feelings">😊 Feelings</button>
+          <button class="filter-btn" data-comm-cat="needs">💧 Needs</button>
+          <button class="filter-btn" data-comm-cat="people">👨‍👩‍👧 People</button>
+          <button class="filter-btn" data-comm-cat="activities">🎨 Activities</button>
+          <button class="filter-btn" data-comm-cat="places">🏫 Places</button>
+          <button class="filter-btn" data-comm-cat="pain">🤕 Pain / Discomfort</button>
+        </div>
+
+        <div id="commBoardGrid" class="comm-grid"></div>
+
+        <div id="commSelectedDisplay" class="selected-msg-box">
+          <div id="commSelectedText" class="smb-text"></div>
+          <button class="tts-btn" onclick="speakSelectedMessage()">🔊 Speak Again</button>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: EDUCATOR DASHBOARD ==================== -->
+      <section id="view-dashboard" class="view fade-in">
+        <div class="section-header">
+          <div>
+            <h1 class="page-title">Educator & Caregiver Dashboard</h1>
+            <p class="page-subtitle">Comprehensive overview for student monitoring and observations.</p>
+          </div>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <select class="child-select-dropdown form-select"></select>
+            <button class="btn btn-primary btn-sm" onclick="openModal('addChildModal')">➕ Add Child Profile</button>
+          </div>
+        </div>
+
+        <!-- Selected Child Overview Card -->
+        <div class="card" style="margin-bottom:24px;">
+          <div id="dashChildSummary" style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;"></div>
+        </div>
+
+        <!-- Key Metrics Row -->
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-emoji">📋</div>
+            <div id="dashTotalObs" class="stat-value">0</div>
+            <div class="stat-label">Observations Logged</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-emoji">😊</div>
+            <div id="dashTopMood" class="stat-value">-</div>
+            <div class="stat-label">Observed Mood Trend</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-emoji">💬</div>
+            <div id="dashCommPref" class="stat-value" style="font-size:1.1rem;">Visual</div>
+            <div class="stat-label">Comm Preference</div>
+          </div>
+        </div>
+
+        <!-- Recent Observations List -->
+        <div class="card">
+          <div class="section-header" style="margin-bottom:16px;">
+            <h3 style="font-size:1.1rem; font-weight:700;">Recent Daily Observations</h3>
+            <button class="btn btn-secondary btn-sm" data-view-target="observations">View All</button>
+          </div>
+          <div id="dashRecentObsList"></div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: PARENT DASHBOARD ==================== -->
+      <section id="view-parent-dashboard" class="view fade-in">
+        <h1 class="page-title">Parent & Caregiver View</h1>
+        <p class="page-subtitle">Stay connected with your child's day and record notes for educators.</p>
+
+        <div class="card" style="margin-bottom:24px;">
+          <h3 class="section-title" style="font-size:1.2rem; margin-bottom:12px;">Today's Summary</h3>
+          <p style="color:var(--text-secondary); font-size:0.9rem;">
+            Aarav had a positive morning in school today. He participated in art class using picture cards and showed high engagement.
+          </p>
+        </div>
+
+        <div class="card-grid card-grid-3">
+          <div class="card">
+            <h3>🏫 Teacher Notes</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-top:8px;">"Aarav responded well to the 10-second transition warning before lunch today."</p>
+          </div>
+          <div class="card">
+            <h3>🏡 Home Notes</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-top:8px;">"Slept well last night (8 hours). Took morning routine smoothly."</p>
+          </div>
+          <div class="card">
+            <h3>💡 Suggested Home Support</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-top:8px;">Keep visual schedule active during evening dinner time.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: CHILD PROFILES ==================== -->
+      <section id="view-profiles" class="view fade-in">
+        <div class="section-header">
+          <div>
+            <h1 class="page-title">Child Profiles</h1>
+            <p class="page-subtitle">Individual profiles with communication preferences and observed needs.</p>
+          </div>
+          <button class="btn btn-primary" onclick="openModal('addChildModal')">➕ Create Profile</button>
+        </div>
+
+        <div id="childProfilesGrid" class="card-grid"></div>
+      </section>
+
+      <!-- ==================== VIEW: DAILY OBSERVATION ==================== -->
+      <section id="view-observations" class="view fade-in">
+        <h1 class="page-title">Daily Observation Record</h1>
+        <p class="page-subtitle">Log mood, communication method, behavior, and context to support pattern awareness.</p>
+
+        <div class="card" style="margin-bottom:32px;">
+          <form id="dailyObsForm">
+            <div class="obs-form-section">
+              <h3>1. Observed Mood</h3>
+              <div class="emotion-grid">
+                <label class="emotion-btn"><input type="radio" name="mood" value="Happy" checked style="display:none;"/><span class="em">😊</span> Happy</label>
+                <label class="emotion-btn"><input type="radio" name="mood" value="Calm" style="display:none;"/><span class="em">🙂</span> Calm</label>
+                <label class="emotion-btn"><input type="radio" name="mood" value="Sad" style="display:none;"/><span class="em">😢</span> Sad</label>
+                <label class="emotion-btn"><input type="radio" name="mood" value="Frustrated" style="display:none;"/><span class="em">😡</span> Frustrated</label>
+                <label class="emotion-btn"><input type="radio" name="mood" value="Anxious" style="display:none;"/><span class="em">😟</span> Anxious</label>
+                <label class="emotion-btn"><input type="radio" name="mood" value="Excited" style="display:none;"/><span class="em">🤩</span> Excited</label>
+                <label class="emotion-btn"><input type="radio" name="mood" value="Tired" style="display:none;"/><span class="em">😴</span> Tired</label>
+              </div>
+            </div>
+
+            <div class="obs-form-section">
+              <h3>2. Communication Observed</h3>
+              <div class="obs-checkbox-grid">
+                <label class="obs-checkbox"><input type="checkbox" name="comm" value="Spoke verbally"/> Spoke verbally</label>
+                <label class="obs-checkbox"><input type="checkbox" name="comm" value="Used gestures"/> Used gestures</label>
+                <label class="obs-checkbox"><input type="checkbox" name="comm" value="Used picture communication" checked/> Used picture communication</label>
+                <label class="obs-checkbox"><input type="checkbox" name="comm" value="Used AAC device"/> Used AAC device</label>
+                <label class="obs-checkbox"><input type="checkbox" name="comm" value="Had difficulty expressing needs"/> Had difficulty expressing needs</label>
+              </div>
+            </div>
+
+            <div class="obs-form-section">
+              <h3>3. Behavior & Engagement</h3>
+              <div class="obs-checkbox-grid">
+                <label class="obs-checkbox"><input type="checkbox" name="behav" value="Participated in activity" checked/> Participated in activity</label>
+                <label class="obs-checkbox"><input type="checkbox" name="behav" value="Needed additional support"/> Needed additional support</label>
+                <label class="obs-checkbox"><input type="checkbox" name="behav" value="Became frustrated"/> Became frustrated</label>
+                <label class="obs-checkbox"><input type="checkbox" name="behav" value="Avoided activity"/> Avoided activity</label>
+                <label class="obs-checkbox"><input type="checkbox" name="behav" value="Engaged positively"/> Engaged positively</label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Context / Setting</label>
+                <select name="context" class="form-select">
+                  <option value="Classroom">Classroom</option>
+                  <option value="Home">Home</option>
+                  <option value="Therapy">Therapy Session</option>
+                  <option value="Playground">Playground</option>
+                  <option value="Social Activity">Social Activity</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Participation Level</label>
+                <select name="participation" class="form-select">
+                  <option value="High">High Participation</option>
+                  <option value="Medium" selected>Medium Participation</option>
+                  <option value="Low">Low Participation</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Additional Observations & Notes</label>
+              <textarea name="notes" class="form-textarea" placeholder="e.g. Disliked loud bell noise during morning assembly..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg">💾 Save Observation</button>
+          </form>
+        </div>
+
+        <h3 class="section-title" style="font-size:1.2rem; margin-bottom:16px;">Observation History</h3>
+        <div id="observationHistoryList"></div>
+      </section>
+
+      <!-- ==================== VIEW: EMOTION JOURNAL ==================== -->
+      <section id="view-journal" class="view fade-in">
+        <h1 class="page-title">My Day — Emotion Journal</h1>
+        <p class="page-subtitle">A child-friendly visual journal for recording daily experiences.</p>
+
+        <div class="card" style="margin-bottom:32px;">
+          <form id="myDayJournalForm">
+            <h3 style="font-size:1.1rem; margin-bottom:12px;">How was your day today?</h3>
+            <div class="emotion-grid" style="margin-bottom:20px;">
+              <label class="emotion-btn"><input type="radio" name="dayRating" value="Great" checked style="display:none;"/><span class="em">😊</span> Great</label>
+              <label class="emotion-btn"><input type="radio" name="dayRating" value="Good" style="display:none;"/><span class="em">🙂</span> Good</label>
+              <label class="emotion-btn"><input type="radio" name="dayRating" value="Okay" style="display:none;"/><span class="em">😐</span> Okay</label>
+              <label class="emotion-btn"><input type="radio" name="dayRating" value="Difficult" style="display:none;"/><span class="em">😟</span> Difficult</label>
+              <label class="emotion-btn"><input type="radio" name="dayRating" value="VeryDifficult" style="display:none;"/><span class="em">😢</span> Very Difficult</label>
+            </div>
+
+            <h3 style="font-size:1.1rem; margin-bottom:12px;">What activities did you enjoy?</h3>
+            <div class="obs-checkbox-grid" style="margin-bottom:20px;">
+              <label class="obs-checkbox"><input type="checkbox" name="enjoyed" value="Drawing" checked/> 🎨 Drawing</label>
+              <label class="obs-checkbox"><input type="checkbox" name="enjoyed" value="Music"/> 🎵 Music</label>
+              <label class="obs-checkbox"><input type="checkbox" name="enjoyed" value="Playing"/> ⚽ Playing</label>
+              <label class="obs-checkbox"><input type="checkbox" name="enjoyed" value="Learning"/> 📚 Learning</label>
+              <label class="obs-checkbox"><input type="checkbox" name="enjoyed" value="Friends"/> 👫 Friends</label>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Caregiver / Child Journal Notes</label>
+              <textarea name="journalNotes" class="form-textarea" placeholder="Record any highlights or comments about the day..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">🌟 Save Entry</button>
+          </form>
+        </div>
+
+        <h3 class="section-title" style="font-size:1.2rem; margin-bottom:16px;">Recent Journal Entries</h3>
+        <div id="journalTimelineList"></div>
+      </section>
+
+      <!-- ==================== VIEW: BEHAVIOR LOG ==================== -->
+      <section id="view-behavior-log" class="view fade-in">
+        <h1 class="page-title">Behavior Journal (ABC Format)</h1>
+        <p class="page-subtitle">Structured Antecedent-Behavior-Consequence observation logging for caregivers.</p>
+
+        <div class="card" style="margin-bottom:32px;">
+          <form id="behaviorAbcForm">
+            <div class="form-group">
+              <label class="form-label">1. What happened BEFORE? (Antecedent)</label>
+              <input type="text" name="before" class="form-input" placeholder="e.g. Transitioning from playtime to classroom..." required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">2. What did the child DO? (Observed Behavior)</label>
+              <input type="text" name="observed" class="form-input" placeholder="e.g. Covered ears and avoided moving to desk..." required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">3. What happened AFTERWARD? (Consequence / Support)</label>
+              <input type="text" name="after" class="form-input" placeholder="e.g. Provided 10-second warning and quiet space..." required />
+            </div>
+
+            <button type="submit" class="btn btn-primary">📓 Save Behavior Log</button>
+          </form>
+        </div>
+
+        <h3 class="section-title" style="font-size:1.2rem; margin-bottom:16px;">Logged Behavior Observations</h3>
+        <div id="behaviorLogList"></div>
+      </section>
+
+      <!-- ==================== VIEW: PATTERN INSIGHTS ==================== -->
+      <section id="view-insights" class="view fade-in">
+        <h1 class="page-title">Understanding Patterns</h1>
+        <p class="page-subtitle">Frontend-generated trends to help caregivers identify recurring needs and triggers.</p>
+
+        <div id="insightsContent"></div>
+      </section>
+
+      <!-- ==================== VIEW: AI ASSISTANT ==================== -->
+      <section id="view-assistant" class="view fade-in">
+        <h1 class="page-title">NeuroVoice Assistant</h1>
+        <p class="page-subtitle">Ask questions about recorded observation trends and support suggestions.</p>
+
+        <div class="assistant-container">
+          <div class="assistant-header">
+            <span style="font-size:1.6rem;">🤖</span>
+            <div>
+              <strong style="font-size:1rem;">NeuroVoice Assistant (Simulated Prototype)</strong>
+              <div style="font-size:0.75rem; opacity:0.9;">Rule-based helper analyzing local observation logs</div>
+            </div>
+          </div>
+
+          <div id="assistantMessages" class="assistant-messages">
+            <div class="msg-row">
+              <div class="msg-avatar ai-av">🤖</div>
+              <div class="msg-bubble ai-bubble">
+                Hello! I can summarize recorded observation patterns for your selected child. 
+                <br/><br/>
+                Try asking:
+                <br/>• <em>"What patterns were recorded this week?"</em>
+                <br/>• <em>"What support do you suggest?"</em>
+                <div class="msg-disclaimer">⚡ Prototype response based on rule-based local data analysis</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="assistant-input-row">
+            <input type="text" id="assistantInput" class="assistant-input" placeholder="Ask a question about observations..." />
+            <button id="assistantSendBtn" class="btn btn-primary">Send</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: CIRCLE OF CARE ==================== -->
+      <section id="view-circle-of-care" class="view fade-in">
+        <h1 class="page-title">Connect the Circle of Care</h1>
+        <p class="page-subtitle">A shared collaboration concept bridging home, school, and therapy environments.</p>
+
+        <div class="card" style="text-align:center; padding:48px 24px;">
+          <div style="display:flex; justify-content:center; align-items:center; gap:24px; flex-wrap:wrap; margin-bottom:32px;">
+            <div class="hero-flow-node">
+              <span class="node-emoji">🧒</span>
+              <span>Child</span>
+            </div>
+            <span class="hero-flow-arrow">⟷</span>
+            <div class="hero-flow-node">
+              <span class="node-emoji">👨‍👩‍👧</span>
+              <span>Parents</span>
+            </div>
+            <span class="hero-flow-arrow">⟷</span>
+            <div class="hero-flow-node">
+              <span class="node-emoji">👩‍🏫</span>
+              <span>Teacher</span>
+            </div>
+            <span class="hero-flow-arrow">⟷</span>
+            <div class="hero-flow-node">
+              <span class="node-emoji">🩺</span>
+              <span>Therapist</span>
+            </div>
+          </div>
+
+          <p style="max-width:600px; margin:0 auto; color:var(--text-secondary); line-height:1.7;">
+            Children communicate differently depending on the situation and environment. NeuroVoice provides a unified observation platform so authorized adults can maintain a consistent record and collaborate smoothly.
+          </p>
+
+          <div class="insight-disclaimer" style="max-width:600px; margin:24px auto 0;">
+            ℹ️ <strong>Collaboration Concept Prototype:</strong> Live multi-user synchronization and backend permissions are simulated for demonstration purposes.
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: VISUAL SCHEDULE ==================== -->
+      <section id="view-schedule" class="view fade-in">
+        <h1 class="page-title">My Schedule</h1>
+        <p class="page-subtitle">Visual daily timeline to reduce uncertainty and support predictable transitions.</p>
+
+        <div class="card">
+          <div id="visualScheduleList" class="schedule-list"></div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: LEARNING SUPPORT ==================== -->
+      <section id="view-learning" class="view fade-in">
+        <h1 class="page-title">Learning Support Activities</h1>
+        <p class="page-subtitle">Accessible visual exercises focusing on communication and routine recognition.</p>
+
+        <div class="card-grid card-grid-3">
+          <div class="card">
+            <span style="font-size:2.5rem;">🗣️</span>
+            <h3 style="margin-top:10px;">Communication Cards</h3>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Practice selecting cards to express needs and feelings.</p>
+            <button class="btn btn-secondary btn-sm" data-view-target="comm-board" style="margin-top:14px;">Open Cards</button>
+          </div>
+          <div class="card">
+            <span style="font-size:2.5rem;">🧩</span>
+            <h3 style="margin-top:10px;">Routine Matching</h3>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Match visual symbols to morning and evening routines.</p>
+            <button class="btn btn-secondary btn-sm" data-view-target="schedule" style="margin-top:14px;">View Routine</button>
+          </div>
+          <div class="card">
+            <span style="font-size:2.5rem;">🎨</span>
+            <h3 style="margin-top:10px;">Emotion Recognition</h3>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Explore emojis and vocal expressions for basic emotions.</p>
+            <button class="btn btn-secondary btn-sm" data-view-target="journal" style="margin-top:14px;">Open Journal</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: USER RESEARCH & PERSONA ==================== -->
+      <section id="view-user-research" class="view fade-in">
+        <h1 class="page-title">Understanding the User</h1>
+        <p class="page-subtitle">Target demographic analysis, common technology barriers, and user persona.</p>
+
+        <div class="card" style="margin-bottom:28px;">
+          <h2 style="font-size:1.3rem; margin-bottom:12px;">Target Demographic: Children with IDD</h2>
+          <p style="color:var(--text-secondary); line-height:1.7;">
+            NeuroVoice focuses specifically on children with intellectual and developmental disabilities. These children often communicate through non-verbal cues, gestures, or behavioral expressions rather than conventional speech.
+          </p>
+
+          <h3 style="font-size:1.1rem; margin-top:20px; margin-bottom:10px;">Common Technology Barriers</h3>
+          <ul style="padding-left:20px; color:var(--text-secondary); font-size:0.9rem; line-height:1.7;">
+            <li>Complex navigation menus and small text buttons</li>
+            <li>Interfaces requiring rapid multi-step instructions</li>
+            <li>Lack of audio/visual feedback during interactions</li>
+            <li>Overwhelming sensory stimuli (flashing animations, cluttered screens)</li>
+          </ul>
+        </div>
+
+        <h2 class="section-title" style="font-size:1.3rem; margin-bottom:16px;">User Persona</h2>
+        <div class="persona-card">
+          <div class="persona-avatar-wrap">
+            <div class="persona-avatar">🧒</div>
+            <div class="persona-avatar-name">Aarav (Age 9)</div>
+          </div>
+          <div>
+            <h3 style="font-size:1.3rem; margin-bottom:4px;">Meet Aarav</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;">Child with Intellectual & Developmental Disability • Fictional Persona</p>
+            
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+              <div>
+                <strong>🎯 Goals & Needs</strong>
+                <ul style="font-size:0.85rem; color:var(--text-secondary); padding-left:18px; margin-top:4px;">
+                  <li>Express daily needs easily</li>
+                  <li>Follow clear visual routines</li>
+                  <li>Be understood during transitions</li>
+                </ul>
+              </div>
+              <div>
+                <strong>⚠️ Frustrations</strong>
+                <ul style="font-size:0.85rem; color:var(--text-secondary); padding-left:18px; margin-top:4px;">
+                  <li>Unexpected schedule changes</li>
+                  <li>Loud unfamiliar noises</li>
+                  <li>Multi-step verbal instructions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: DESIGN PRINCIPLES ==================== -->
+      <section id="view-design-principles" class="view fade-in">
+        <h1 class="page-title">Designed Around the Child</h1>
+        <p class="page-subtitle">7 core design principles guiding the NeuroVoice interface.</p>
+
+        <div class="card-grid card-grid-3">
+          <div class="principle-card">
+            <div class="principle-icon">✨</div>
+            <h3 class="principle-title">Simplicity</h3>
+            <p class="principle-desc">Minimize cognitive load with clear visual hierarchy and focused choices.</p>
+          </div>
+          <div class="principle-card">
+            <div class="principle-icon">👁️</div>
+            <h3 class="principle-title">Visual Communication</h3>
+            <p class="principle-desc">Utilize icons, visual cards, and color cues as primary communication paths.</p>
+          </div>
+          <div class="principle-card">
+            <div class="principle-icon">🔄</div>
+            <h3 class="principle-title">Predictability</h3>
+            <p class="principle-desc">Maintain consistent button placements, navigation, and routine schedules.</p>
+          </div>
+          <div class="principle-card">
+            <div class="principle-icon">🎨</div>
+            <h3 class="principle-title">Personalization</h3>
+            <p class="principle-desc">Adapt interface complexity and text size to each child's preferences.</p>
+          </div>
+          <div class="principle-card">
+            <div class="principle-icon">🌟</div>
+            <h3 class="principle-title">Independence</h3>
+            <p class="principle-desc">Enable non-verbal children to voice basic feelings and needs directly.</p>
+          </div>
+          <div class="principle-card">
+            <div class="principle-icon">🤝</div>
+            <h3 class="principle-title">Collaboration</h3>
+            <p class="principle-desc">Bridge communication across parents, special educators, and therapists.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: RESPONSIBLE AI & PRIVACY ==================== -->
+      <section id="view-responsible-ai" class="view fade-in">
+        <h1 class="page-title">Responsible AI & Child Privacy</h1>
+        <p class="page-subtitle">Ethical positioning, prototype boundaries, and data safeguards.</p>
+
+        <div class="card" style="margin-bottom:24px;">
+          <h3 style="font-size:1.2rem; color:var(--primary); margin-bottom:12px;">🛡️ Responsible AI Framework</h3>
+          <p style="color:var(--text-secondary); line-height:1.7;">
+            NeuroVoice is an assistive tool to support communication and observational logging. It is <strong>NOT</strong> a clinical diagnosis system, psychiatric assessment tool, or medical device.
+          </p>
+          <ul style="padding-left:20px; color:var(--text-secondary); font-size:0.9rem; margin-top:12px; line-height:1.7;">
+            <li>All AI suggestions and pattern summaries are observational and rule-based in this prototype.</li>
+            <li>Suggestions must always be reviewed by qualified parents, educators, or professionals.</li>
+            <li>No medical diagnostic claims are made by the platform.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size:1.2rem; color:var(--primary); margin-bottom:12px;">🔒 Child Data & Local Privacy</h3>
+          <p style="color:var(--text-secondary); line-height:1.7;">
+            In this static frontend prototype, all child profiles, logs, and preferences are stored exclusively inside your browser's local storage (`localStorage`). No personal data is transmitted to external backend servers or cloud services.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: ACCESSIBILITY CENTER & AUDIT ==================== -->
+      <section id="view-accessibility" class="view fade-in">
+        <h1 class="page-title">Accessibility Center & Audit</h1>
+        <p class="page-subtitle">Global accessibility settings and self-audit compliance checklist.</p>
+
+        <div class="access-panel">
+          <h2 style="font-size:1.2rem; margin-bottom:16px;">Global Accessibility Preferences</h2>
+
+          <div class="access-option">
+            <div>
+              <div class="access-option-label">Text Size</div>
+              <div class="access-option-desc">Adjust baseline typography size across the entire application.</div>
+            </div>
+            <div class="access-toggle-group">
+              <button class="access-toggle-btn active" data-access-text="normal">Normal</button>
+              <button class="access-toggle-btn" data-access-text="large">Large</button>
+              <button class="access-toggle-btn" data-access-text="xlarge">Extra Large</button>
+            </div>
+          </div>
+
+          <div class="access-option">
+            <div>
+              <div class="access-option-label">Contrast Mode</div>
+              <div class="access-option-desc">Switch to high-contrast dark theme for visual accessibility.</div>
+            </div>
+            <div class="access-toggle-group">
+              <button class="access-toggle-btn active" data-access-contrast="standard">Standard</button>
+              <button class="access-toggle-btn" data-access-contrast="high">High Contrast</button>
+            </div>
+          </div>
+
+          <div class="access-option">
+            <div>
+              <div class="access-option-label">Motion Preferences</div>
+              <div class="access-option-desc">Disable smooth transitions and animations.</div>
+            </div>
+            <div class="access-toggle-group">
+              <button class="access-toggle-btn active" data-access-motion="normal">Normal Motion</button>
+              <button class="access-toggle-btn" data-access-motion="reduced">Reduced Motion</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Audit Checklist -->
+        <h2 class="section-title" style="font-size:1.3rem; margin-bottom:16px;">Accessibility Audit Checklist</h2>
+        <div class="card">
+          <div class="audit-section">
+            <h3>👁️ Visual Accessibility</h3>
+            <div class="audit-grid">
+              <div class="audit-item">✓ Large readable text tokens</div>
+              <div class="audit-item">✓ High-contrast color options</div>
+              <div class="audit-item">✓ Visual icons paired with text</div>
+              <div class="audit-item">✓ Clear visual selection states</div>
+            </div>
+          </div>
+
+          <div class="audit-section">
+            <h3>👆 Interaction & Touch</h3>
+            <div class="audit-grid">
+              <div class="audit-item">✓ Oversized touch targets for children</div>
+              <div class="audit-item">✓ Full keyboard navigation support</div>
+              <div class="audit-item">✓ Focus rings on interactive elements</div>
+              <div class="audit-item">✓ One-tap Text-to-Speech audio</div>
+            </div>
+          </div>
+
+          <div class="audit-section">
+            <h3>🧠 Cognitive & Child Safety</h3>
+            <div class="audit-grid">
+              <div class="audit-item">✓ Simplified Child Mode layout</div>
+              <div class="audit-item">✓ Minimal text density</div>
+              <div class="audit-item">✓ Predictable navigation scheme</div>
+              <div class="audit-item">✓ Transparent prototype disclaimers</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- Add Child Modal -->
+  <div id="addChildModal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>➕ Add Child Profile</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="addChildProfileForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Child Name</label>
+            <input type="text" name="name" class="form-input" placeholder="e.g. Aarav Sharma" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Age</label>
+              <input type="number" name="age" class="form-input" min="1" max="18" value="8" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Gender</label>
+              <select name="gender" class="form-select">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Support Level</label>
+            <select name="supportLevel" class="form-select">
+              <option value="Level 1 — Requiring Support">Level 1 — Requiring Support</option>
+              <option value="Level 2 — Requiring Substantial Support" selected>Level 2 — Requiring Substantial Support</option>
+              <option value="Level 3 — Requiring Very Substantial Support">Level 3 — Requiring Very Substantial Support</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Caregiver Name</label>
+              <input type="text" name="caregiver" class="form-input" placeholder="Parent/Guardian" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Teacher / Educator</label>
+              <input type="text" name="teacher" class="form-input" placeholder="Special Educator" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Preferred Communication Method</label>
+            <input type="text" name="method" class="form-input" placeholder="e.g. Visual Cards + Gestures" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-modal-close>Cancel</button>
+          <button type="submit" class="btn btn-primary">Create Profile</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Edit Child Modal -->
+  <div id="editChildModal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>✏️ Edit Child Profile</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="editChildProfileForm">
+        <input type="hidden" id="editChildId" />
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Child Name</label>
+            <input type="text" id="editChildName" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Age</label>
+            <input type="number" id="editChildAge" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Communication Method</label>
+            <input type="text" id="editChildMethod" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Notes & Preferences</label>
+            <textarea id="editChildNotes" class="form-textarea"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-modal-close>Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- App Script (ES Module) -->
+  <script type="module" src="./js/app.js"></script>
+
+</body>
+</html>

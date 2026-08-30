@@ -1,0 +1,92 @@
+[
+  {
+    "id": "child_001",
+    "name": "Aarav Sharma",
+    "age": 9,
+    "gender": "Male",
+    "avatar": "🧒",
+    "supportLevel": "Level 2 — Requiring Substantial Support",
+    "caregiver": "Priya Sharma (Mother)",
+    "teacher": "Ms. Kavitha Reddy",
+    "communicationMethod": "Visual + Gestures",
+    "interests": ["Drawing", "Music", "Trains", "Outdoor walks"],
+    "strengths": ["Pattern recognition", "Memory for routines", "Visual learning"],
+    "communicationPreferences": {
+      "primary": "Picture Communication",
+      "secondary": "Simple spoken words",
+      "avoid": "Complex multi-step instructions"
+    },
+    "learningPreferences": {
+      "style": "Visual and hands-on",
+      "environment": "Quiet and structured",
+      "bestTime": "Morning (9am-11am)"
+    },
+    "notes": "Aarav responds well to visual schedules and 10-second transition warnings. He often communicates discomfort through ear-covering.",
+    "todayStatus": "😊",
+    "todayStatusLabel": "Happy",
+    "emergencyNotes": "Aarav becomes distressed by sudden loud noises. Allow him to see new people before they approach. Always give a 10-second verbal warning before physical contact.",
+    "comfortItems": "Small blue fidget cube, noise-cancelling headphones",
+    "medicalAlerts": "Mild sensory sensitivity to adhesive bandages — use paper tape only",
+    "customTriggers": ["Loud sudden noises", "Unexpected schedule changes", "Being approached from behind"]
+  },
+  {
+    "id": "child_002",
+    "name": "Meera Nair",
+    "age": 7,
+    "gender": "Female",
+    "avatar": "👧",
+    "supportLevel": "Level 1 — Requiring Support",
+    "caregiver": "Anand Nair (Father)",
+    "teacher": "Ms. Lakshmi Patel",
+    "communicationMethod": "Speech + Signs",
+    "interests": ["Music", "Painting", "Dollhouses", "Nature"],
+    "strengths": ["Creative expression", "Social awareness", "Vocal communication"],
+    "communicationPreferences": {
+      "primary": "Simple spoken words",
+      "secondary": "Gestures",
+      "avoid": "Abstract concepts and long explanations"
+    },
+    "learningPreferences": {
+      "style": "Visual and auditory",
+      "environment": "Calm with soft background music",
+      "bestTime": "Late morning (10am-12pm)"
+    },
+    "notes": "Meera communicates toilet need through leg-crossing and weight shifting. She does not make eye contact when anxious — this is not non-cooperation.",
+    "todayStatus": "🙂",
+    "todayStatusLabel": "Calm",
+    "emergencyNotes": "Meera communicates bathroom need through leg-crossing — respond within 2 minutes. Avoid bright overhead lights when she seems anxious.",
+    "comfortItems": "Soft elephant toy, prefers dim lighting",
+    "medicalAlerts": "Mild lactose sensitivity — confirm before offering dairy snacks",
+    "customTriggers": ["New adults without introduction", "Bright overhead lighting", "Loud crowded spaces"]
+  },
+  {
+    "id": "child_003",
+    "name": "Rohan Iyer",
+    "age": 11,
+    "gender": "Male",
+    "avatar": "🧒",
+    "supportLevel": "Level 3 — Requiring Very Substantial Support",
+    "caregiver": "Sudha Iyer (Mother)",
+    "teacher": "Mr. Venkat Kumar",
+    "communicationMethod": "Assistive Device + Pictures",
+    "interests": ["Puzzles", "Cars", "Computers", "Swimming"],
+    "strengths": ["Problem solving", "Attention to detail", "Consistent routines"],
+    "communicationPreferences": {
+      "primary": "AAC Device",
+      "secondary": "Picture cards",
+      "avoid": "Verbal-only instructions"
+    },
+    "learningPreferences": {
+      "style": "Structured with clear visual steps",
+      "environment": "Low stimulation",
+      "bestTime": "Afternoon (2pm-4pm)"
+    },
+    "notes": "Rohan communicates best when given extra processing time. Do not rush responses. He often expresses needs through repetitive actions.",
+    "todayStatus": "😐",
+    "todayStatusLabel": "Neutral",
+    "emergencyNotes": "Allow Rohan extra processing time — do not rush. Repetitive actions often signal a communication attempt, not defiance.",
+    "comfortItems": "Weighted blanket, specific puzzle set",
+    "medicalAlerts": "No known allergies",
+    "customTriggers": ["Time pressure", "Unexpected visitors", "Sensory-rich environments"]
+  }
+]
